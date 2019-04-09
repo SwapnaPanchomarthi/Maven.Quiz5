@@ -2,7 +2,7 @@ package rocks.zipcode.io.quiz4.generics.sortedgroup.integersortedgroup;
 
 import org.junit.Assert;
 import org.junit.Test;
-import org.omg.CORBA.INTERNAL;
+
 import rocks.zipcode.io.quiz4.generics.Group;
 import rocks.zipcode.io.quiz4.generics.SortedGroup;
 
