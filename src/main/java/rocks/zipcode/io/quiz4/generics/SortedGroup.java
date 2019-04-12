@@ -1,36 +1,40 @@
 package rocks.zipcode.io.quiz4.generics;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Stack;
+import java.util.TreeSet;
+
 /**
  * @author leon on 18/12/2018.
  */
-public class SortedGroup<_> extends Group<_> {
+public class SortedGroup<T> extends Group<T> {
 
-
+    private TreeSet<T> treeSet;
 
     public SortedGroup(){
-        super();
+
+       this.treeSet=new TreeSet<>();
     }
+
+
     @Override
     public void insert(Object value) {
-        try {
-            super.insert(value);
-        } catch (IndexOutOfBoundsException e){
-            System.out.println("Index out of bound occured");
-        }
+
+        treeSet.add((T) value);
     }
 
     @Override
     public void delete(Object value) {
-        try {
-            super.delete(value);
-        } catch (IndexOutOfBoundsException e){
-            System.out.println("Index out of bound occured");
-        }
+
+        treeSet.remove(value);
     }
 
 
-    public Integer indexOf(_ value) {
+    public Integer indexOf(T value) {
 
-        return (Integer) super.fetch((int)value);
+        //
+        // return (Integer) super.fetch((int)value);
+        return treeSet.headSet(value).size();
     }
 }
